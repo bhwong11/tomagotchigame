@@ -129,6 +129,7 @@ const digitalPet = {
         $('.hunger-num').text(digitalPet.hunger);
         $('.sleepiness-num').text(digitalPet.sleepiness);
         $('.bordem-num').text(digitalPet.bordem);
+        $('.age-num').text(digitalPet.age);
     },
     feed(){
 
