@@ -132,8 +132,13 @@ const digitalPet = {
         $('.age-num').text(digitalPet.age);
     },
     feed(){
-
+        digitalPet.hunger--;
+        digitalPet.displayMetrics();
     },
+    turnOffLights(){
+        digitalPet.sleepiness--;
+        digitalPet.displayMetrics();
+    }
 
 }
 
