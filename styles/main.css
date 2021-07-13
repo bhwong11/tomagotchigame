@@ -6,9 +6,6 @@
 body{
     height: 100vh;
 }
-.animate__animated.animate__bounce {
-    --animate-duration: 15s;
-  }
 
 .name-input-screen{
     height: 100%;

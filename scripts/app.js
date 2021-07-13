@@ -112,6 +112,7 @@ $('submit-btn').on('click,$(submit info).addClass('no-display) and $(digital pet
         game.timer = setInterval(game.timerHandler,1000)
     },
     timerHandler(){
+        //animate   
         game.time++;
         console.log(game.time);
         digitalPet.checkAge();
@@ -119,8 +120,7 @@ $('submit-btn').on('click,$(submit info).addClass('no-display) and $(digital pet
         digitalPet.checkImageChange();
         digitalPet.checkIfDead();
 
-        //animate
-        $('.animate__animated.animate__bounce').attr('--animate-duration',`${game.time}s`)
+
     },
 }
     
