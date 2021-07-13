@@ -70,6 +70,8 @@ Milestones:
 
 
 
+
+
 // - 2. create game object that should have timer and time properties and start timer 
 //     - create timer  property
 //     - start timer methods and event handler for setInterval
@@ -88,25 +90,81 @@ Milestones:
 const game = {
     time: 0,
     timer: null,
-    startTimer(){
-        game.timer = setInterval(function(e){console.log('time')},1000)
-    },
-}
-    
-//- hide digital pet and metrics page on click of submit
+    start(event){
+        //- hide digital pet and metrics page on click of submit
 /* 
 $('submit-btn').on('click,$(submit info).addClass('no-display) and $(digital pet infor).removeClass(no-display))
 
 */
+        event.preventDefault();
+        $('.name-input-screen').addClass('no-display');
+        $('.digital-pet-screen').removeClass('no-display');
+        digitalPet.displayMetrics();
+        game.startTimer();
+    },
+    startTimer(){
+        game.timer = setInterval(game.timerHandler,1000)
+    },
+    timerHandler(){
+        game.time++;
+        console.log(game.time)
+    },
+}
+    
+// 3. create digital pet object, should have property of hunger, sleepiness, and bordom on it
+//      - 
+//      - add pet name, metrics to screen
+const digitalPet = {
+    name: null,
+    hunger: 0,
+    sleepiness: 0,
+    bordem:0,
+    age:0,
+    namePet(event){
+        event.preventDefault();
+        this.name = $('#pet-name').val();
+        console.log($('#pet-name').val())
+    },
+    displayMetrics(){
+        $('.hunger-num').text(digitalPet.hunger);
+        $('.sleepiness-num').text(digitalPet.sleepiness);
+        $('.bordem-num').text(digitalPet.bordem);
+    },
+    feed(){
+
+    },
+
+}
 
 
-// - create digital pet object, should have property of hunger, sleepiness, and bordom on it
-//     - decrease in pet object
-//     - decrease in display
-// - create methods to decrease each of the those properties
+
+
+
+
+//event listener for submit btn
+const $submitBtn = $('#submit-name');
+$submitBtn.on('click',digitalPet.namePet);
+$submitBtn.on('click',game.start);
+
+
+
+// 4. create methods to decrease each of the those properties
 //     - descrease in pet object 
 //     - decrease in display
+
+/* 
+feed(){
+    this.hunger--
+    digitalPet.displayMetrics
+}
+*/
 // - create methods to increase each of those properties based on timer intervals
+/* 
+digitalPet.checkTime{
+    if(time===3600)
+}
+*/
+
 // - add event listeners on the buttons(feed, turn off lights, play) that decrease display
 // - animate the image on the screen(research how to do this)
 // - display 'dead' pet image
