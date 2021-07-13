@@ -58,6 +58,8 @@ Milestones:
 - create baby 
 - exercise() method add on
 - add display fo time in hours, mintues, seconds since game has started
+- check age and display a different death image based on it's evultion
+- stop way to revieved pet
 
 
 //control flow map/brain map/ annotate wire frames -annotate notes to wireframe
@@ -115,6 +117,10 @@ $('submit-btn').on('click,$(submit info).addClass('no-display) and $(digital pet
         digitalPet.checkAge();
         digitalPet.checkMetrics();
         digitalPet.checkImageChange();
+        digitalPet.checkIfDead();
+
+        //animate
+        $('.animate__animated.animate__bounce').attr('--animate-duration',`${game.time}s`)
     },
 }
     
@@ -134,6 +140,7 @@ const digitalPet = {
         'https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png',
         'https://i.pinimg.com/originals/f9/e7/a8/f9e7a8560adc31252b9b4d7f0906f0bf.png','https://www.nicepng.com/png/detail/902-9020336_umbreon-shiny-png-shiny-umbreon-umbreon.png'
     ],
+    passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
     namePet(event){
         event.preventDefault();
         this.name = $('#pet-name').val();
@@ -210,7 +217,15 @@ digitalPet.checkTime{
     },
     //add method to check if pet has died
     checkIfDead(){
-        
+        if(digitalPet.huner>=10){
+            $('.digital-pet-image').attr('src',digitalPet.passedOutImages[0])
+        }
+        if(digitalPet.sleepiness>=10){
+            $('.digital-pet-image').attr('src',digitalPet.passedOutImages[0])
+        }
+        if(digitalPet.bordem>=10){
+            $('.digital-pet-image').attr('src',digitalPet.passedOutImages[0])
+        }
     },
 
 }

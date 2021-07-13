@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssnormalize/cssnormalize-min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
     <script src="scripts/app.js" defer></script>
@@ -26,6 +30,7 @@
 
     <div class="digital-pet-screen no-display">
         <main>
+            <h1 class="animate__animated animate__bounce">An animated element</h1>
             <section class="text-display">
                 <div class= "name-display">
                     <div class="name-text">
@@ -47,8 +52,8 @@
                     </div>
                 </div>
             </section>
-            <section class="digital-pet-display">
-                <img class="digital-pet-image" src="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png" alt="digital pet image">
+            <section class="digital-pet-display animate__animated animate__bounces">
+                <img class="animate__animated animate__bounce digital-pet-image" src="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png" alt="digital pet image">
             </section>
             <section class="buttons-display">
                 <button class = "player-buttons" id="feed-btn">

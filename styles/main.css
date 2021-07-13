@@ -6,6 +6,10 @@
 body{
     height: 100vh;
 }
+.animate__animated.animate__bounce {
+    --animate-duration: 15s;
+  }
+
 .name-input-screen{
     height: 100%;
     display: flex;
@@ -51,6 +55,8 @@ body{
 .digital-pet-display{
     display: flex;
     justify-content: center;
+
+    margin: 60px;
 }
 img{
     height: 50vh;
