@@ -25,7 +25,9 @@
     c. if the user clicks the "play" button the "bordem" metric displayed will decrease by 1
 
 Milestones:
-    - create html for use input of name and digital pet display page, hided digital pet and metrics page
+    - create html for use input of name and digital pet display page, 
+    
+    - hide digital pet and metrics page on click of submit
     - create game object that should have timer and time properties and start timer 
         - create timer  property
         - start timer methods and event handler for setInterval
@@ -63,14 +65,25 @@ Milestones:
 
 
 // ===Pseudo Code===
-// - create html for use input of name and digital pet display page, hided digital pet and metrics page
+// - 1.create html for use input of name and digital pet display page, hided digital pet and metrics page
 
 
 
-// - 1. create game object that should have timer and time properties and start timer 
+// - 2. create game object that should have timer and time properties and start timer 
 //     - create timer  property
 //     - start timer methods and event handler for setInterval
+        /* 
+        const game
+        timer: null
+        startTimer(){
+            setInterval(event handler,1000)
+        }
+        
+        */
     
+//- hide digital pet and metrics page on click of submit
+
+
 
 // - create digital pet object, should have property of hunger, sleepiness, and bordom on it
 //     - decrease in pet object
