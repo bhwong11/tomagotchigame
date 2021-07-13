@@ -60,6 +60,7 @@ Milestones:
 - add display fo time in hours, mintues, seconds since game has started
 - check age and display a different death image based on it's evultion
 - stop way to revieved pet
+- add a way to get a new pet
 
 
 //control flow map/brain map/ annotate wire frames -annotate notes to wireframe
@@ -136,6 +137,7 @@ const digitalPet = {
     intervalOfAging: 3,
     intervalMetricsIncrease: 1,
     intervalEvolution: 3,
+    isDead: false,
     evolutionImages: [
         'https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png',
         'https://i.pinimg.com/originals/f9/e7/a8/f9e7a8560adc31252b9b4d7f0906f0bf.png','https://www.nicepng.com/png/detail/902-9020336_umbreon-shiny-png-shiny-umbreon-umbreon.png'
@@ -187,15 +189,18 @@ digitalPet.checkTime{
 }
 */
         //check if add age is needed
+        if(!digitalPet.isDead){
         if(game.time%(digitalPet.intervalOfAging)===0){
             if(game.time!==0){
                 digitalPet.age++;
                 digitalPet.displayMetrics();
             }
         }
+    }
     },
     checkMetrics(){
         //check if add metrics is need
+        if(!digitalPet.isDead){
         if(game.time%(digitalPet.intervalMetricsIncrease)===0){
             if(game.time!==0){
                 digitalPet.hunger++;
@@ -204,9 +209,11 @@ digitalPet.checkTime{
                 digitalPet.displayMetrics();
             }
         }        
+    }
     },
     //add method to change image on age
     checkImageChange(){
+        if(!digitalPet.isDead){
         if(digitalPet.age%digitalPet.intervalEvolution===0){
             if(digitalPet.age!==0){
                 if(!(digitalPet.age/digitalPet.intervalEvolution>2)){
@@ -214,18 +221,24 @@ digitalPet.checkTime{
                 }
             }
         }
+    }
     },
     //add method to check if pet has died
     checkIfDead(){
-        if(digitalPet.huner>=10){
-            $('.digital-pet-image').attr('src',digitalPet.passedOutImages[0])
+        const metricsArr = [digitalPet.hunger,digitalPet.sleepiness,digitalPet.bordem];
+
+        for(let metric of metricsArr){
+            if(metric>=10){
+            console.log('dead')
+            $('.digital-pet-image').attr('src',digitalPet.passedOutImages[0]);
+            digitalPet.isDead = true;
+            $('.animate__animated').removeClass('animate__animated');
+
+            $('.death-flag').removeClass('no-display');
+            $('.death-flag').text(`Your Pet has Died! reload to get another one`);
+            clearInterval(game.timer);
         }
-        if(digitalPet.sleepiness>=10){
-            $('.digital-pet-image').attr('src',digitalPet.passedOutImages[0])
-        }
-        if(digitalPet.bordem>=10){
-            $('.digital-pet-image').attr('src',digitalPet.passedOutImages[0])
-        }
+    }
     },
 
 }
@@ -252,13 +265,6 @@ $playBtn.on('click',digitalPet.play)
 
 
 
-
-
-
-
-
-
-
-
-// - animate the image on the screen(research how to do this)
 // - display 'dead' pet image
+
+
