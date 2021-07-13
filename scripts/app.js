@@ -18,6 +18,7 @@
     b. at 1800 seconds intervals after page load, the bordem, sleepiness, and hunger metric will increase by 1;
     c. when either the hunger, border, or sleepiness display reaches 10 an image of the pet laying in a "dead" position will be displayed and a message will appear below the "digital pet" image will appear saying the pet has passed and reload the page to get another pet;
     d. The digital pet image will move on screen either up and down or left and right(will move in some animated way)
+    e. The image will change at each 3 age internal
 
 4. The user clicks the feed, play, or turn off lights button
     a. if the user clicks the "feed" button the "hunger" metric displayed will decrease by 1
@@ -40,6 +41,7 @@ Milestones:
     - create methods to increase each of those properties based on timer intervals
     - add event listeners on the buttons(feed, turn off lights, play) that decrease display
     - animate the image on the screen(research how to do this)
+    -change image based on age
     - display 'dead' pet image
 
 
@@ -101,13 +103,18 @@ $('submit-btn').on('click,$(submit info).addClass('no-display) and $(digital pet
         $('.digital-pet-screen').removeClass('no-display');
         digitalPet.displayMetrics();
         game.startTimer();
+        $submitBtn.off('click',digitalPet.namePet);
+        $submitBtn.off('click',game.start);
     },
     startTimer(){
         game.timer = setInterval(game.timerHandler,1000)
     },
     timerHandler(){
         game.time++;
-        console.log(game.time)
+        console.log(game.time);
+        digitalPet.checkAge();
+        digitalPet.checkMetrics();
+        digitalPet.checkImageChange();
     },
 }
     
@@ -120,10 +127,17 @@ const digitalPet = {
     sleepiness: 0,
     bordem:0,
     age:0,
+    intervalOfAging: 3,
+    intervalMetricsIncrease: 1,
+    intervalEvolution: 3,
+    evolutionImages: [
+        'https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png',
+        'https://i.pinimg.com/originals/f9/e7/a8/f9e7a8560adc31252b9b4d7f0906f0bf.png','https://www.nicepng.com/png/detail/902-9020336_umbreon-shiny-png-shiny-umbreon-umbreon.png'
+    ],
     namePet(event){
         event.preventDefault();
         this.name = $('#pet-name').val();
-        console.log($('#pet-name').val())
+        $('.name-span').text(this.name)
     },
     displayMetrics(){
         $('.hunger-num').text(digitalPet.hunger);
@@ -131,30 +145,7 @@ const digitalPet = {
         $('.bordem-num').text(digitalPet.bordem);
         $('.age-num').text(digitalPet.age);
     },
-    feed(){
-        digitalPet.hunger--;
-        digitalPet.displayMetrics();
-    },
-    turnOffLights(){
-        digitalPet.sleepiness--;
-        digitalPet.displayMetrics();
-    }
-
-}
-
-
-
-
-
-
-//event listener for submit btn
-const $submitBtn = $('#submit-name');
-$submitBtn.on('click',digitalPet.namePet);
-$submitBtn.on('click',game.start);
-
-
-
-// 4. create methods to decrease each of the those properties
+    // 4. create methods to decrease each of the those properties
 //     - descrease in pet object 
 //     - decrease in display
 
@@ -164,13 +155,95 @@ feed(){
     digitalPet.displayMetrics
 }
 */
-// - create methods to increase each of those properties based on timer intervals
+    feed(){
+        digitalPet.hunger--;
+        digitalPet.displayMetrics();
+    },
+    turnOffLights(){
+        digitalPet.sleepiness--;
+        digitalPet.displayMetrics();
+    },
+    play(){
+        digitalPet.bordem--;
+        digitalPet.displayMetrics();
+    },
+    checkAge(){
+        // - create methods to increase each of those properties based on timer intervals
 /* 
 digitalPet.checkTime{
-    if(time===3600)
+    if(time%3600===0){
+        age++
+    }
+    if(time%1800){
+        metrics++
+    }
 }
 */
+        //check if add age is needed
+        if(game.time%(digitalPet.intervalOfAging)===0){
+            if(game.time!==0){
+                digitalPet.age++;
+                digitalPet.displayMetrics();
+            }
+        }
+    },
+    checkMetrics(){
+        //check if add metrics is need
+        if(game.time%(digitalPet.intervalMetricsIncrease)===0){
+            if(game.time!==0){
+                digitalPet.hunger++;
+                digitalPet.sleepiness++;
+                digitalPet.bordem++;
+                digitalPet.displayMetrics();
+            }
+        }        
+    },
+    //add method to change image on age
+    checkImageChange(){
+        if(digitalPet.age%digitalPet.intervalEvolution===0){
+            if(digitalPet.age!==0){
+                if(!(digitalPet.age/digitalPet.intervalEvolution>2)){
+                $('.digital-pet-image').attr('src',digitalPet.evolutionImages[Math.floor(digitalPet.age/digitalPet.intervalEvolution)])
+                }
+            }
+        }
+    },
+    //add method to check if pet has died
+    checkIfDead(){
+        
+    },
 
-// - add event listeners on the buttons(feed, turn off lights, play) that decrease display
+}
+
+
+
+
+
+
+//event listener for submit btn and player interaction btn
+const $submitBtn = $('#submit-name');
+const $feedBtn = $('#feed-btn');
+const $lightsBtn = $('#lights-btn');
+const $playBtn = $('#play-btn');
+
+
+$submitBtn.on('click', digitalPet.namePet);
+$submitBtn.on('click', game.start);
+
+// event listeners for the buttons(feed, turn off lights, play) that decrease display
+$feedBtn.on('click',digitalPet.feed)
+$lightsBtn.on('click',digitalPet.turnOffLights)
+$playBtn.on('click',digitalPet.play)
+
+
+
+
+
+
+
+
+
+
+
 // - animate the image on the screen(research how to do this)
 // - display 'dead' pet image
