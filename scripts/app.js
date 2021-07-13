@@ -55,6 +55,7 @@ Milestones:
 - refactor with classes
 - create baby 
 - exercise() method add on
+- add display fo time in hours, mintues, seconds since game has started
 
 
 //control flow map/brain map/ annotate wire frames -annotate notes to wireframe
@@ -74,15 +75,22 @@ Milestones:
 //     - start timer methods and event handler for setInterval
         /* 
         const game
-        timer: null
+        time: 0,
+        timer: null,
         startTimer(){
             setInterval(event handler,1000)
+        },
+        eventhandler(){
+            game.timer++
         }
         
         */
     
 //- hide digital pet and metrics page on click of submit
+/* 
+$('submit-btn').on('click,$(submit info).addClass('no-display) and $(digital pet infor).removeClass(no-display))
 
+*/
 
 
 // - create digital pet object, should have property of hunger, sleepiness, and bordom on it
