@@ -66,7 +66,7 @@ Milestones:
 
 
 // ===Pseudo Code===
-// - 1.create html for use input of name and digital pet display page, hided digital pet and metrics page
+// - 1.create html for use input of name and digital pet display page, hided digital pet and metrics page - done
 
 
 

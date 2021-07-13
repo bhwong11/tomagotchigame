@@ -11,16 +11,54 @@
     <script src="scripts/app.js" defer></script>
 </head>
 <body>
-    <div class="name-input">
+    <div class="name-input-screen no-display">
+    <main>
         <form action="#">
-            <main>
             <label for="pet-name">Enter Your Pet Name</label>
             <input id ="pet-name" name = "pet-name" type="text" placeholder>
-            <div class="button-div">
+        <div class="button-div">
             <button type="submit">Submit</button>
         </div>
-        </main>
         </form>
+    </main>
+   
+    </div>
+
+    <div class="digital-pet-screen">
+        <main>
+            <section class="text-display">
+                <div class= "name-display">
+                    <div class="name-text">
+                    placeholder
+                </div>
+                </div>
+                <div class="metrics-display">
+                    <div class="metric hunger-text">
+                        placeholder
+                    </div>
+                    <div class="metric sleepiness-text">
+                        placeholder
+                    </div>
+                    <div class="metric boredom">
+                        palceholder
+                    </div>
+                </div>
+            </section>
+            <section class="digital-pet-display">
+                <img class="digital-pet-image" src="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png" alt="digital pet image">
+            </section>
+            <section class="buttons-display">
+                <button id="feed-btn">
+                    Feed
+                </button>
+                <button id="lights-btn">
+                    Turn Off Lights
+                </button>
+                <button id="play-btn">
+                    Play
+                </button>
+            </section>
+        </main>
     </div>
     
 </body>

@@ -6,7 +6,7 @@
 body{
     height: 100vh;
 }
-.name-input{
+.name-input-screen{
     height: 100%;
     display: flex;
     align-items: center;
@@ -16,3 +16,43 @@ body{
     display: flex;
     justify-content: space-evenly;
 }
+
+/* digital pet screen */
+.text-display{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.metrics-display{
+    background-color: bisque;
+}
+
+.metric{
+    margin: 10px;
+    background-color: aqua;
+}
+
+.name-display{
+    background-color: bisque;
+}
+.name-text{
+    background-color: aqua;
+}
+.buttons-display{
+    display: flex;
+    justify-content: space-evenly;
+}
+.no-display{
+    display: none;
+}
+.digital-pet-screen{
+    height: 100%;
+}
+.digital-pet-display{
+    display: flex;
+    justify-content: center;
+}
+img{
+    height: 50vh;
+}
+
