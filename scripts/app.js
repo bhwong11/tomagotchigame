@@ -81,10 +81,17 @@ Milestones:
             setInterval(event handler,1000)
         },
         eventhandler(){
-            game.timer++
+            game.time++
         }
         
         */
+const game = {
+    time: 0,
+    timer: null,
+    startTimer(){
+        game.timer = setInterval(function(e){console.log('time')},1000)
+    },
+}
     
 //- hide digital pet and metrics page on click of submit
 /* 
