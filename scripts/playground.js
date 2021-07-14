@@ -34,16 +34,65 @@ const petsData =[
     passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
 }
 ];
+
+
+const petsHardModeData =[
+
+    {
+        name:null,
+        intervalOfAging: 10,
+        intervalMetricsIncrease: 1,
+        intervalEvolution: 1,
+        evolutionImages: [
+            'https://img.pokemondb.net/sprites/silver/normal/charmander.png',
+            'https://img.pokemondb.net/sprites/silver/normal/charmeleon.png','https://img.pokemondb.net/sprites/silver/normal/charizard.png'
+        ],
+        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+    },
+    {
+        name:null,
+        intervalOfAging: 10,
+        intervalMetricsIncrease: 1,
+        intervalEvolution: 1,
+        evolutionImages: [
+            'https://img.pokemondb.net/sprites/silver/normal/bulbasaur.png',
+            'https://img.pokemondb.net/sprites/silver/normal/ivysaur.png','https://img.pokemondb.net/sprites/silver/normal/venusaur.png'
+        ],
+        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+    },
+    {
+        name:null,
+        intervalOfAging: 10,
+        intervalMetricsIncrease: 1,
+        intervalEvolution: 1,
+        evolutionImages: [
+            'https://img.pokemondb.net/sprites/silver/normal/squirtle.png',
+            'https://img.pokemondb.net/sprites/silver/normal/wartortle.png','https://img.pokemondb.net/sprites/silver/normal/blastoise.png'
+        ],
+        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+    }
+    ];
+
+
+
+
 class PetFactory{
-    constructor(name,data){
+    constructor(name,data,dataHardMode){
         this.name = name;
         this.pets = [];
+        this.hardModePets = [];
         this.currentIndex = 0;
+        this.currentIndexhardMode = 0;
         this.inputData = data;
+        this.inputHardModeData = dataHardMode;
     }
     createPet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id=this.pets.length){
         const newPet = new Pet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
          this.pets.push(newPet)
+     }
+     createHardModePet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id=`HM-${this.hardModePets.length}`){
+        const newPet = new BabyPet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
+         this.hardModePets.push(newPet)
      }
           
     makeNewPet=()=>{
@@ -62,16 +111,34 @@ class PetFactory{
          }else{
              this.currentIndex++
          }
-         console.log('make new pet')
-         console.log(this.pets[this.pets.length-1])
          $('body').empty();
          $('body').append(this.pets[this.pets.length-1].render());
         this.pets[this.pets.length-1].addEventListeners();
     }
+    makeNewHardModePet=()=>{
+        console.log(this);
+
+        console.log(this.inputHardModeData);
+        this.createHardModePet(this.inputHardModeData[this.currentIndex].name,
+        this.inputHardModeData[this.currentIndexhardMode].intervalOfAging,
+        this.inputHardModeData[this.currentIndexhardMode].intervalMetricsIncrease,
+        this.inputHardModeData[this.currentIndexhardMode].intervalEvolution,
+        this.inputHardModeData[this.currentIndexhardMode].evolutionImages,
+        this.inputHardModeData[this.currentIndexhardMode].passedOutImages)
+
+         if(this.currentIndexhardMode === this.inputData.length-1){
+            this.currentIndexhardMode = 0;
+         }else{
+             this.currentIndexhardMode++
+         }
+         $('body').empty();
+         $('body').append(this.hardModePets[this.hardModePets.length-1].render());
+         this.hardModePets[this.hardModePets.length-1].addEventListeners();
+    }
 }
 
     //intialize pet factory
-    const petFactory1 = new PetFactory('factory1',petsData)
+    const petFactory1 = new PetFactory('factory1',petsData,petsHardModeData)
         
         class Pet{
             constructor(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id){
@@ -146,7 +213,7 @@ class PetFactory{
             </div>
             </section>
             <h2 class="no-display death-flag">jadf</h2>
-            <div class="new-button-container"><button class="no-display " id="make-new-pet">Make New Pet</button></div>
+            <div class="new-button-container"><button class="no-display " id="${this.id}-make-new-pet">Make New Pet</button><button class="no-display " id="${this.id}-make-new-hard-mode">Make New Hard-Mode Pet</button></div>
             <section class="buttons-display">
                 <button class = "player-buttons" id="${this.id}-feed-btn">
                     Feed
@@ -174,8 +241,8 @@ class PetFactory{
             }
             namePet=(event)=>{
                 event.preventDefault();
-                this.id = $('#pet-name').val();
-                $('.name-span').text(this.id)
+                this.name = $('#pet-name').val();
+                $('.name-span').text(this.name)
             }
             addEventListeners(){
                 //console.log(this)
@@ -184,7 +251,9 @@ class PetFactory{
                 $(`#${this.id}-feed-btn`).on('click',this.feed);
                 $(`#${this.id}-lights-btn`).on('click',this.turnOffLights);
                 $(`#${this.id}-play-btn`).on('click',this.play);
-                $('#make-new-pet').on('click',petFactory1.makeNewPet)
+                $(`#${this.id}-make-new-pet`).on('click',petFactory1.makeNewPet)
+                $(`#${this.id}-make-new-hard-mode`).on('click',petFactory1.makeNewHardModePet
+                )
             }
             displayMetrics(){
                 $('.hunger-num').text(this.hunger);
@@ -251,27 +320,52 @@ class PetFactory{
                     this.isDead = true;
                     $('.animate__animated').removeClass('animate__animated');
                     $('.death-flag').removeClass('no-display');
-                    $('.death-flag').text(`Your Pet has Died! reload to get another one`);
-                    $('#make-new-pet').removeClass('no-display')
+                    $('.death-flag').text(`Your Pet has Died! Click Below to Get a new Pet`);
+                    $(`#${this.id}-make-new-hard-mode`).removeClass('no-display')
+                    $(`#${this.id}-make-new-pet`).removeClass('no-display')
+                    console.log(this.id)
                     break
                 }
             }
             }
         }
 
-        class babyPet = {
-            
+        class BabyPet extends Pet {
+            constructor(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id){
+                super(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
+            }
+            feed=()=>{
+                this.hunger -=.5;
+                this.displayMetrics();
+            }
+            turnOffLights=()=>{
+                this.sleepiness -=.5;
+                this.displayMetrics();
+            }
+            play=()=>{
+                this.bordem -=.5;
+                this.displayMetrics();
+            }
         }
-
-
-        const pet1 = new Pet('pet1',10,1,3,[
+        
+        const babypet1 = new BabyPet('pet1',10,1,3,[
             'https://img.pokemondb.net/sprites/black-white/normal/charmander.png',
             'https://img.pokemondb.net/sprites/black-white/normal/charmeleon.png" alt="Charmeleo','https://img.pokemondb.net/sprites/black-white/normal/charizard.png'
         ],['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],1)
+
+        console.log(babypet1)
+
+
+        petFactory1.makeNewPet();
+
+    //     const pet1 = new Pet('pet1',10,1,3,[
+    //         'https://img.pokemondb.net/sprites/black-white/normal/charmander.png',
+    //         'https://img.pokemondb.net/sprites/black-white/normal/charmeleon.png" alt="Charmeleo','https://img.pokemondb.net/sprites/black-white/normal/charizard.png'
+    //     ],['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],1)
      
-        console.log(pet1)
-    $(`body`).eq(0).append(pet1.render());
-    pet1.addEventListeners()
+    //     console.log(pet1)
+    // $(`body`).eq(0).append(pet1.render());
+    // pet1.addEventListeners()
 
 
 
