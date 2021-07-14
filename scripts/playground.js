@@ -286,7 +286,7 @@ Milestones:
             }
 
             render(){
-                return `<div class="digital-pet-screen no-display">
+                return `<div class="digital-pet-screen">
         <main>
             <section class="text-display">
                 <div class= "name-display">
@@ -327,10 +327,11 @@ Milestones:
                 </button>
             </section>
         </main>
-    </div>`
+    </div>`;
             }
             addEventListeners(){
-                $(`#${this.name}-feed-btn`).on('click',)
+                console.log(this)
+                $(`#${this.name}-feed-btn`).on('click',this.feed);
             }
             namePet(event){
                 event.preventDefault();
@@ -343,7 +344,7 @@ Milestones:
                 $('.bordem-num').text(this.bordem);
                 $('.age-num').text(this.age);
             }
-            feed(){
+            feed=()=>{
                 this.hunger--;
                 this.displayMetrics();
             }
@@ -415,4 +416,6 @@ Milestones:
             'https://i.pinimg.com/originals/f9/e7/a8/f9e7a8560adc31252b9b4d7f0906f0bf.png','https://www.nicepng.com/png/detail/902-9020336_umbreon-shiny-png-shiny-umbreon-umbreon.png'
         ],['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'])
      
-        console.log(pet1 )
+        console.log(pet1)
+    $(`main`).eq(0).after(pet1.render());
+    pet1.addEventListeners()
