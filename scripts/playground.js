@@ -267,101 +267,138 @@ Milestones:
         
         // - display 'dead' pet image
         
+        //create buttons and add event listeners on each one
         
         class Pet{
-            constructor(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages){
+            constructor(name,id,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages){
+                this.name = name;
+                this.intervalOfAging = intervalOfAging;
+                this.intervalMetricsIncrease = intervalMetricsIncrease;
+                this.intervalEvolution = intervalEvolution;
+                this.evolutionImages = evolutionImages;
+                this.passedOutImages = passedOutImages;
                 this.hunger = 0;
                 this.sleepiness = 0;
                 this.bordem=0;
                 this.age = 0;
+                this.id = id;
+                
             }
 
-            intervalOfAging: 3,
-            intervalMetricsIncrease: 1,
-            intervalEvolution: 3,
-            isDead: false,
-            evolutionImages: [
-                'https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png',
-                'https://i.pinimg.com/originals/f9/e7/a8/f9e7a8560adc31252b9b4d7f0906f0bf.png','https://www.nicepng.com/png/detail/902-9020336_umbreon-shiny-png-shiny-umbreon-umbreon.png'
-            ],
-            passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+            render(){
+                return `<div class="digital-pet-screen no-display">
+        <main>
+            <section class="text-display">
+                <div class= "name-display">
+                    <div class="name-text">
+                    name: <span class ="name-span"></span>
+                </div>
+                </div>
+                <div class="metrics-display">
+                    <div class="metric hunger-text">
+                        age: <span class = 'metric-num age-num'>0</span>
+                    </div>
+                    <div class="metric hunger-text">
+                        Hunger: <span class = 'metric-num hunger-num'>0</span>
+                    </div>
+                    <div class="metric sleepiness-text">
+                        sleepiness <span class = 'metric-num sleepiness-num'>0</span>
+                    </div>
+                    <div class="metric bordem">
+                        bordem <span class = 'metric-num bordem-num'>0</span>
+                    </div>
+                </div>
+            </section>
+            <section class="digital-pet-display animate__animated animate__bounce animate__infinite">
+                <img class="digital-pet-image" src=${this.evolutionImages[0]} alt="digital pet image">
+                <div>
+            </div>
+            </section>
+            <h2 class="no-display death-flag"></h2>
+            <section class="buttons-display">
+                <button class = "player-buttons" id="${this.name}-feed-btn">
+                    Feed
+                </button>
+                <button class = "player-buttons" id="${this.name}-lights-btn">
+                    Turn Off Lights
+                </button>
+                <button class = "player-buttons" id="${this.name}-play-btn">
+                    Play
+                </button>
+            </section>
+        </main>
+    </div>`
+            }
+            addEventListeners(){
+                $(`#${this.name}-feed-btn`).on('click',)
+            }
             namePet(event){
                 event.preventDefault();
                 this.name = $('#pet-name').val();
                 $('.name-span').text(this.name)
-            },
+            }
             displayMetrics(){
-                $('.hunger-num').text(digitalPet.hunger);
-                $('.sleepiness-num').text(digitalPet.sleepiness);
-                $('.bordem-num').text(digitalPet.bordem);
-                $('.age-num').text(digitalPet.age);
-            },
-            // 4. create methods to decrease each of the those properties
-        //     - descrease in pet object 
-        //     - decrease in display
-        
-        /* 
-        feed(){
-            this.hunger--
-            digitalPet.displayMetrics
-        }
-        */
+                $('.hunger-num').text(this.hunger);
+                $('.sleepiness-num').text(this.sleepiness);
+                $('.bordem-num').text(this.bordem);
+                $('.age-num').text(this.age);
+            }
             feed(){
-                digitalPet.hunger--;
-                digitalPet.displayMetrics();
-            },
+                this.hunger--;
+                this.displayMetrics();
+            }
             turnOffLights(){
-                digitalPet.sleepiness--;
-                digitalPet.displayMetrics();
-            },
+                this.sleepiness--;
+                this.displayMetrics();
+            }
             play(){
-                digitalPet.bordem--;
-                digitalPet.displayMetrics();
-            },
+                this.bordem--;
+                this.displayMetrics();
+            }
             checkAge(){
-                if(!digitalPet.isDead){
-                if(game.time%(digitalPet.intervalOfAging)===0){
+                if(!this.isDead){
+                if(game.time%(this.intervalOfAging)===0){
                     if(game.time!==0){
-                        digitalPet.age++;
-                        digitalPet.displayMetrics();
+                        this.age++;
+                        this.displayMetrics();
                     }
                 }
             }
-            },
+            }
             checkMetrics(){
                 //check if add metrics is need
-                if(!digitalPet.isDead){
-                if(game.time%(digitalPet.intervalMetricsIncrease)===0){
+                if(!this.isDead){
+                if(game.time%(this.intervalMetricsIncrease)===0){
                     if(game.time!==0){
-                        digitalPet.hunger++;
-                        digitalPet.sleepiness++;
-                        digitalPet.bordem++;
-                        digitalPet.displayMetrics();
+                        this.hunger++;
+                        this.sleepiness++;
+                        this.bordem++;
+                        this.displayMetrics();
                     }
                 }        
             }
-            },
+            }
             //add method to change image on age
             checkImageChange(){
-                if(!digitalPet.isDead){
-                if(digitalPet.age%digitalPet.intervalEvolution===0){
-                    if(digitalPet.age!==0){
-                        if(!(digitalPet.age/digitalPet.intervalEvolution>2)){
-                        $('.digital-pet-image').attr('src',digitalPet.evolutionImages[Math.floor(digitalPet.age/digitalPet.intervalEvolution)])
+                if(!this.isDead){
+                if(this.age%this.intervalEvolution===0){
+                    if(this.age!==0){
+                        if(!(this.age/this.intervalEvolution>2)){
+                        $('.digital-pet-image').attr('src',this.evolutionImages[Math.floor(this.age/this.intervalEvolution)])
                         }
                     }
                 }
             }
-            },
+            }
             //add method to check if pet has died
             checkIfDead(){
-                const metricsArr = [digitalPet.hunger,digitalPet.sleepiness,digitalPet.bordem];
+                const metricsArr = [this.hunger,this.sleepiness,this.bordem];
         
                 for(let metric of metricsArr){
                     if(metric>=10){
                     console.log('dead')
-                    $('.digital-pet-image').attr('src',digitalPet.passedOutImages[0]);
-                    digitalPet.isDead = true;
+                    $('.digital-pet-image').attr('src',this.passedOutImages[0]);
+                    this.isDead = true;
                     $('.animate__animated').removeClass('animate__animated');
         
                     $('.death-flag').removeClass('no-display');
@@ -369,5 +406,13 @@ Milestones:
                     clearInterval(game.timer);
                 }
             }
-            },
+            }
         }
+
+
+        const pet1 = new Pet('pet1',1,10,1,3,[
+            'https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png',
+            'https://i.pinimg.com/originals/f9/e7/a8/f9e7a8560adc31252b9b4d7f0906f0bf.png','https://www.nicepng.com/png/detail/902-9020336_umbreon-shiny-png-shiny-umbreon-umbreon.png'
+        ],['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'])
+     
+        console.log(pet1 )
