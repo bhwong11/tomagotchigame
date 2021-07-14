@@ -332,6 +332,8 @@ Milestones:
             addEventListeners(){
                 console.log(this)
                 $(`#${this.name}-feed-btn`).on('click',this.feed);
+                $(`#${this.name}-lights-btn`).on('click',this.turnOffLights);
+                $(`#${this.name}-play-btn`).on('click',this.play);
             }
             namePet(event){
                 event.preventDefault();
@@ -348,11 +350,11 @@ Milestones:
                 this.hunger--;
                 this.displayMetrics();
             }
-            turnOffLights(){
+            turnOffLights=()=>{
                 this.sleepiness--;
                 this.displayMetrics();
             }
-            play(){
+            play=()=>{
                 this.bordem--;
                 this.displayMetrics();
             }
