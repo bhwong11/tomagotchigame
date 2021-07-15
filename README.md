@@ -63,6 +63,8 @@ This was made as project for JavaScript Objects, CSS, and html Practice.
 
 6.  Images from (https://pokemondb.net/) - used for "Digital Pet" image.
 
+7.  normailize.css - used for css browser compatability change
+
 ===Approach Taken===
 
 The Approach taken was a object approch that was refactored into a class approch with added functionaility and scaling of the project in mind.

@@ -269,10 +269,10 @@ Milestones:
 
 
 /* Updated with Classes verion */
-
+const pokeData = [];
 async function getPokemon(){
 
-    const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');
+    const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=18');
     
         const pokemon = await pokemonRawData.json();
     
@@ -280,9 +280,29 @@ async function getPokemon(){
         
         }
     getPokemon().then(poke=>{
-    console.log(poke.results)
+    poke.results.forEach(
+        function(e,i){
+            if(i%3===0){
+                pokeData.push(
+                    {
+                        name:null,
+                        evolutionNames:[poke.results[i].name,poke.results[i+1].name,poke.results[i+2].name],
+                        intervalOfAging: 10,
+                        intervalMetricsIncrease: 1,
+                        intervalEvolution: 1,
+                        evolutionImages: [
+                            'https://img.pokemondb.net/sprites/black-white/normal/charmander.png',
+                            'https://img.pokemondb.net/sprites/black-white/normal/charmeleon.png','https://img.pokemondb.net/sprites/black-white/normal/charizard.png'
+                        ],
+                        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+                    }
+                    
+                    );
+            }
+        }
+    )
     })
-       
+ console.log(pokeData)      
 
 const petsData =[
 
