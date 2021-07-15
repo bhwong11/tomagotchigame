@@ -269,6 +269,22 @@ Milestones:
 
 
 /* Updated with Classes verion */
+
+async function getPokemon(){
+    try{
+    const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+    const pokemon = await pokemonRawData.json()
+    
+    return pokemon
+    }catch(err){
+        console.log(err);
+    }
+    
+    
+    }
+    getPokemon()
+       
+
 const petsData =[
 
 {
@@ -572,7 +588,7 @@ class PetFactory{
                 if(!this.isDead){
                 if(this.age%this.intervalEvolution===0){
                     if(this.age!==0){
-                        if(!(this.age/this.intervalEvolution>2)){
+                        if(!(this.age/this.intervalEvolution>this.evolutionImages.length-1)){
                         $('.digital-pet-image').attr('src',this.evolutionImages[Math.floor(this.age/this.intervalEvolution)])
                         }
                     }
