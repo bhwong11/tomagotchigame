@@ -310,9 +310,9 @@ async function getPokemon(){
                             intervalMetricsIncrease: 1,
                             intervalEvolution: 1,
                             evolutionImages: [
-                                `https://img.pokemondb.net/sprites/silver/normal/${poke.results[i].name}.png`,
-                                `https://img.pokemondb.net/sprites/silver/normal/${poke.results[i+1].name}.png`,
-                                `https://img.pokemondb.net/sprites/silver/normal/${poke.results[i+2].name}.png`,
+                                `https://img.pokemondb.net/sprites/sword-shield/normal/${poke.results[i].name}.png`,
+                                `https://img.pokemondb.net/sprites/sword-shield/normal/${poke.results[i+1].name}.png`,
+                                `https://img.pokemondb.net/sprites/sword-shield/normal/${poke.results[i+2].name}.png`,
                             ],
                             passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
                         }
@@ -465,7 +465,10 @@ class PetFactory{
             </div>
             </section>
             <h2 class="no-display death-flag">jadf</h2>
-            <div class="new-button-container"><button class="no-display new-pet-btn" id="${this.id}-make-new-pet">Make New Pet</button><button class="no-display new-pet-btn" id="${this.id}-make-new-hard-mode">Make New Hard-Mode Pet</button></div>
+            <div class="no-display new-button-container">
+            <button class="no-display new-pet-btn" id="${this.id}-make-new-pet">Make New Pet</button>
+            <button class="no-display new-pet-btn" id="${this.id}-make-new-hard-mode">Make New Hard-Mode Pet</button>
+            </div>
             <section class="buttons-display">
                 <button class = "player-buttons" id="${this.id}-feed-btn">
                     Feed
@@ -507,6 +510,7 @@ class PetFactory{
                 )
             }
             displayMetrics(){
+                //$('.new-button-container').css('background-color','red')
                 $('.hunger-num').text(this.hunger);
                 $('.sleepiness-num').text(this.sleepiness);
                 $('.bordem-num').text(this.bordem);
@@ -573,8 +577,10 @@ class PetFactory{
                     $('.animate__animated').removeClass('animate__animated');
                     $('.death-flag').removeClass('no-display');
                     $('.death-flag').text(`Your Pet has Died! Click Below to Get a new Pet`);
-                    $(`#${this.id}-make-new-hard-mode`).removeClass('no-display')
-                    $(`#${this.id}-make-new-pet`).removeClass('no-display')
+                    $(`#${this.id}-make-new-hard-mode`).removeClass('no-display');
+                    $(`#${this.id}-make-new-pet`).removeClass('no-display');
+                    $('.new-button-container').removeClass('no-display');
+                    $('.new-button-container').addClass('new-button-flex');
                     $('.buttons-display').addClass('no-display')
                     console.log(this.id)
                     break

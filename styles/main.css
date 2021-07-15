@@ -36,9 +36,11 @@ body{
 
 .metric{
     margin: 10px;
+    padding: 5px;
     display: flex;
     justify-content: space-evenly;
     background-color: aqua;
+    text-align-last: justify;
 }
 
 .name-display{
@@ -46,25 +48,33 @@ body{
     width: 30%;
 }
 .name-text{
-    background-color: aqua;
     display: flex;
     justify-content: space-evenly;
+    margin: 10px;
+    padding: 5px;
+    background-color: aqua;
+
 }
 .evolution-text{
-    background-color: aqua;
     display: flex;
     justify-content: space-evenly;
+    margin: 10px;
+    padding: 5px;
+    background-color: aqua;
+
 }
 .buttons-display{
     display: flex;
     justify-content: space-evenly;
+    padding: 10% 5% 100% 5%; 
+    background-color: salmon;
 }
 .no-display{
     display: none;
 }
 .digital-pet-screen{
     margin: 5%;
-    height: 90%;
+    height: 95%;
     max-height: 100%;
     border: 20px solid purple;
     border-radius: 10px;
@@ -80,6 +90,7 @@ img{
     height: 30vh;
 }
 
+/* This is for the submit */
 .button-div{
     display: flex;
     justify-content: space-evenly;
@@ -89,10 +100,16 @@ img{
 }
 
 .new-button-container{
+    margin-top: 20px;
+    padding: 3% 5% 100% 5%; 
+    background-color: salmon;
+}
+.new-button-flex{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
+/* This is for start screen */
 .new-button-container-start{
     height: 100vh;
     display: flex;
