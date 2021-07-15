@@ -452,10 +452,10 @@ class PetFactory{
                         Hunger: <span class = 'metric-num hunger-num'>0</span>
                     </div>
                     <div class="metric sleepiness-text">
-                        sleepiness <span class = 'metric-num sleepiness-num'>0</span>
+                        sleepiness: <span class = 'metric-num sleepiness-num'>0</span>
                     </div>
                     <div class="metric bordem">
-                        bordem <span class = 'metric-num bordem-num'>0</span>
+                        bordem: <span class = 'metric-num bordem-num'>0</span>
                     </div>
                 </div>
             </section>
@@ -465,7 +465,7 @@ class PetFactory{
             </div>
             </section>
             <h2 class="no-display death-flag">jadf</h2>
-            <div class="new-button-container"><button class="no-display " id="${this.id}-make-new-pet">Make New Pet</button><button class="no-display " id="${this.id}-make-new-hard-mode">Make New Hard-Mode Pet</button></div>
+            <div class="new-button-container"><button class="no-display new-pet-btn" id="${this.id}-make-new-pet">Make New Pet</button><button class="no-display new-pet-btn" id="${this.id}-make-new-hard-mode">Make New Hard-Mode Pet</button></div>
             <section class="buttons-display">
                 <button class = "player-buttons" id="${this.id}-feed-btn">
                     Feed
