@@ -5,13 +5,18 @@
   }
 body{
     height: 100vh;
+    max-height: 95vh;
 }
 
 .name-input-screen{
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 5%;
+    height: 100%;
+    border: 20px solid purple;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .button-div{
     display: flex;
@@ -21,11 +26,12 @@ body{
 /* digital pet screen */
 .text-display{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .metrics-display{
     background-color: bisque;
+    width: 80%;
 }
 
 .metric{
@@ -35,6 +41,7 @@ body{
 
 .name-display{
     background-color: bisque;
+    width: 20%;
 }
 .name-text{
     background-color: aqua;
@@ -47,16 +54,21 @@ body{
     display: none;
 }
 .digital-pet-screen{
-    height: 100%;
+    margin: 5%;
+    height: 90%;
+    max-height: 100%;
+    border: 20px solid purple;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .digital-pet-display{
     display: flex;
     justify-content: center;
     height: 100%;
-    margin: 60px;
+    margin: 3%;
 }
 img{
-    height: 40vh;
+    height: 30vh;
 }
 
 .new-button-container{
@@ -69,5 +81,9 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.death-flag{
+    padding: 0% 10%;
+    text-align: center;
 }
 
