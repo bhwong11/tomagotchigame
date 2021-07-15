@@ -291,7 +291,7 @@ async function getPokemon(){
                     {
                         name:null,
                         evolutionNames:[poke.results[i].name,poke.results[i+1].name,poke.results[i+2].name],
-                        intervalOfAging: 10,
+                        intervalOfAging: 5,
                         intervalMetricsIncrease: 1,
                         intervalEvolution: 1,
                         evolutionImages: [
@@ -306,7 +306,7 @@ async function getPokemon(){
                         {
                             name:null,
                             evolutionNames:[poke.results[i].name,poke.results[i+1].name,poke.results[i+2].name],
-                            intervalOfAging: 10,
+                            intervalOfAging: 5,
                             intervalMetricsIncrease: 1,
                             intervalEvolution: 1,
                             evolutionImages: [
