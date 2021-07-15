@@ -117,7 +117,7 @@ Milestones:
 //                 console.log(game.time);
 //                 digitalPet.checkAge();
 //                 digitalPet.checkMetrics();
-//                 digitalPet.checkImageChange();
+//                 digitalPet.checkEvolutionChange();
 //                 digitalPet.checkIfDead();
         
         
@@ -211,7 +211,7 @@ Milestones:
 //             }
 //             },
 //             //add method to change image on age
-//             checkImageChange(){
+//             checkEvolutionChange(){
 //                 if(!digitalPet.isDead){
 //                 if(digitalPet.age%digitalPet.intervalEvolution===0){
 //                     if(digitalPet.age!==0){
@@ -269,6 +269,8 @@ Milestones:
 
 
 /* Updated with Classes verion */
+
+
 const pokeData = [];
 const pokeDataHardMode = [];
 
@@ -319,83 +321,7 @@ async function getPokemon(){
             }
         }
     )
-    })
- console.log(pokeData)      
-
-const petsData =[
-
-{
-    name:null,
-    intervalOfAging: 10,
-    intervalMetricsIncrease: 1,
-    intervalEvolution: 1,
-    evolutionImages: [
-        'https://img.pokemondb.net/sprites/black-white/normal/charmander.png',
-        'https://img.pokemondb.net/sprites/black-white/normal/charmeleon.png','https://img.pokemondb.net/sprites/black-white/normal/charizard.png'
-    ],
-    passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
-},
-{
-    name:null,
-    intervalOfAging: 10,
-    intervalMetricsIncrease: 1,
-    intervalEvolution: 1,
-    evolutionImages: [
-        'https://img.pokemondb.net/sprites/black-white/normal/bulbasaur.png',
-        'https://img.pokemondb.net/sprites/black-white/normal/ivysaur.png','https://img.pokemondb.net/sprites/black-white/normal/venusaur-f.png'
-    ],
-    passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
-},
-{
-    name:null,
-    intervalOfAging: 10,
-    intervalMetricsIncrease: 1,
-    intervalEvolution: 1,
-    evolutionImages: [
-        'https://img.pokemondb.net/sprites/black-white/normal/squirtle.png',
-        'https://img.pokemondb.net/sprites/black-white/normal/wartortle.png','https://img.pokemondb.net/sprites/black-white/normal/blastoise.png'
-    ],
-    passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
-}
-];
-
-
-const petsHardModeData =[
-
-    {
-        name:null,
-        intervalOfAging: 10,
-        intervalMetricsIncrease: 1,
-        intervalEvolution: 1,
-        evolutionImages: [
-            'https://img.pokemondb.net/sprites/silver/normal/charmander.png',
-            'https://img.pokemondb.net/sprites/silver/normal/charmeleon.png','https://img.pokemondb.net/sprites/silver/normal/charizard.png'
-        ],
-        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
-    },
-    {
-        name:null,
-        intervalOfAging: 10,
-        intervalMetricsIncrease: 1,
-        intervalEvolution: 1,
-        evolutionImages: [
-            'https://img.pokemondb.net/sprites/silver/normal/bulbasaur.png',
-            'https://img.pokemondb.net/sprites/silver/normal/ivysaur.png','https://img.pokemondb.net/sprites/silver/normal/venusaur.png'
-        ],
-        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
-    },
-    {
-        name:null,
-        intervalOfAging: 10,
-        intervalMetricsIncrease: 1,
-        intervalEvolution: 1,
-        evolutionImages: [
-            'https://img.pokemondb.net/sprites/silver/normal/squirtle.png',
-            'https://img.pokemondb.net/sprites/silver/normal/wartortle.png','https://img.pokemondb.net/sprites/silver/normal/blastoise.png'
-        ],
-        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
-    }
-    ];
+    })   
 
 
 
@@ -493,7 +419,7 @@ class PetFactory{
                 console.log(this.time);
                 this.checkAge();
                 this.checkMetrics();
-                this.checkImageChange();
+                this.checkEvolutionChange();
                 this.checkIfDead();
         
         
@@ -627,7 +553,7 @@ class PetFactory{
             }
             }
             //add method to change image on age
-            checkImageChange(){
+            checkEvolutionChange(){
                 if(!this.isDead){
                 if(this.age%this.intervalEvolution===0){
                     if(this.age!==0){
@@ -710,6 +636,84 @@ class PetFactory{
 
 
 //create game object that will create start screen, pet factory
+
+//==old hardcoded data==
+
+/* 
+const petsData =[
+
+{
+    name:null,
+    intervalOfAging: 10,
+    intervalMetricsIncrease: 1,
+    intervalEvolution: 1,
+    evolutionImages: [
+        'https://img.pokemondb.net/sprites/black-white/normal/charmander.png',
+        'https://img.pokemondb.net/sprites/black-white/normal/charmeleon.png','https://img.pokemondb.net/sprites/black-white/normal/charizard.png'
+    ],
+    passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+},
+{
+    name:null,
+    intervalOfAging: 10,
+    intervalMetricsIncrease: 1,
+    intervalEvolution: 1,
+    evolutionImages: [
+        'https://img.pokemondb.net/sprites/black-white/normal/bulbasaur.png',
+        'https://img.pokemondb.net/sprites/black-white/normal/ivysaur.png','https://img.pokemondb.net/sprites/black-white/normal/venusaur-f.png'
+    ],
+    passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+},
+{
+    name:null,
+    intervalOfAging: 10,
+    intervalMetricsIncrease: 1,
+    intervalEvolution: 1,
+    evolutionImages: [
+        'https://img.pokemondb.net/sprites/black-white/normal/squirtle.png',
+        'https://img.pokemondb.net/sprites/black-white/normal/wartortle.png','https://img.pokemondb.net/sprites/black-white/normal/blastoise.png'
+    ],
+    passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+}
+];
+
+
+const petsHardModeData =[
+
+    {
+        name:null,
+        intervalOfAging: 10,
+        intervalMetricsIncrease: 1,
+        intervalEvolution: 1,
+        evolutionImages: [
+            'https://img.pokemondb.net/sprites/silver/normal/charmander.png',
+            'https://img.pokemondb.net/sprites/silver/normal/charmeleon.png','https://img.pokemondb.net/sprites/silver/normal/charizard.png'
+        ],
+        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+    },
+    {
+        name:null,
+        intervalOfAging: 10,
+        intervalMetricsIncrease: 1,
+        intervalEvolution: 1,
+        evolutionImages: [
+            'https://img.pokemondb.net/sprites/silver/normal/bulbasaur.png',
+            'https://img.pokemondb.net/sprites/silver/normal/ivysaur.png','https://img.pokemondb.net/sprites/silver/normal/venusaur.png'
+        ],
+        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+    },
+    {
+        name:null,
+        intervalOfAging: 10,
+        intervalMetricsIncrease: 1,
+        intervalEvolution: 1,
+        evolutionImages: [
+            'https://img.pokemondb.net/sprites/silver/normal/squirtle.png',
+            'https://img.pokemondb.net/sprites/silver/normal/wartortle.png','https://img.pokemondb.net/sprites/silver/normal/blastoise.png'
+        ],
+        passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+    }
+    ]; */
 
 //adjust constructor and varible name to hardMode pet
 //todo tree = vs code extension //better comments
