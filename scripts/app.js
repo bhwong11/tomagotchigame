@@ -276,10 +276,8 @@ const pokeDataHardMode = [];
 
 async function getPokemon(){
 
-    const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=18');
-    
-        const pokemon = await pokemonRawData.json();
-    
+    const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=18')
+    const pokemon = await pokemonRawData.json();
     return pokemon
         
         }
