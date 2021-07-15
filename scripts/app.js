@@ -424,8 +424,8 @@ class PetFactory{
                 return `<div class="name-input-screen">
                 <main>
                     <form action="#">
-                        <label for="pet-name">Enter Your Pet Name</label>
-                        <input id ="pet-name" name = "pet-name" type="text" placeholder>
+                        <label for="pet-name">Enter Your Pokemon Name</label>
+                        <input id ="pet-name" name = "pet-name" type="text" placeholder="enter name">
                     <div class="button-div">
                         <button id="${this.id}-submit-name">Submit</button>
                     </div>
@@ -464,10 +464,10 @@ class PetFactory{
                 <div>
             </div>
             </section>
-            <h2 class="no-display death-flag">jadf</h2>
+            <h2 class="no-display death-flag"></h2>
             <div class="no-display new-button-container">
-            <button class="no-display new-pet-btn" id="${this.id}-make-new-pet">Make New Pet</button>
-            <button class="no-display new-pet-btn" id="${this.id}-make-new-hard-mode">Make New Hard-Mode Pet</button>
+            <button class="no-display new-pet-btn" id="${this.id}-make-new-pet">New Pokemon</button>
+            <button class="no-display new-pet-btn" id="${this.id}-make-new-hard-mode">New Hard-Mode Pokemon</button>
             </div>
             <section class="buttons-display">
                 <button class = "player-buttons" id="${this.id}-feed-btn">
@@ -575,7 +575,7 @@ class PetFactory{
                     this.isDead = true;
                     $('.animate__animated').removeClass('animate__animated');
                     $('.death-flag').removeClass('no-display');
-                    $('.death-flag').text(`Your Pet has Died! Click Below to Get a new Pet`);
+                    $('.death-flag').text(`Your Pokemon has Fainted! Click Below to Get a new Pokemon`);
                     $(`#${this.id}-make-new-hard-mode`).removeClass('no-display');
                     $(`#${this.id}-make-new-pet`).removeClass('no-display');
                     $('.new-button-container').removeClass('no-display');

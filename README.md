@@ -61,7 +61,7 @@ This was made as project for JavaScript Objects, CSS, and html Practice.
 
 5.  animate.css (css libary) - used for boucning anamation of the "Digital Pet" Image.
 
-6.  Images from (https://pokemondb.net/) - used for "Digital Pet" image.
+6.  Images from (https://pokemondb.net/) and (https://aminoapps.com/) - used for "Digital Pet" image.
 
 7.  normailize.css(https://cdnjs.cloudflare.com) - used for css browser compatability change
 
