@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    height: 100vh;
+}
+
+.name-input-screen{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-div{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* digital pet screen */
+.text-display{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.metrics-display{
+    background-color: bisque;
+}
+
+.metric{
+    margin: 10px;
+    background-color: aqua;
+}
+
+.name-display{
+    background-color: bisque;
+}
+.name-text{
+    background-color: aqua;
+}
+.buttons-display{
+    display: flex;
+    justify-content: space-evenly;
+}
+.no-display{
+    display: none;
+}
+.digital-pet-screen{
+    height: 100%;
+}
+.digital-pet-display{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: 60px;
+}
+img{
+    height: 40vh;
+}
+
+.new-button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.new-button-container-start{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
