@@ -5,14 +5,21 @@
 ===User story===
 
 1. User loads page
+
    a. a text input will appear in the center of the screen as well as a submit button
+
    b. the user is able to type within the box and click the submit button.
 
-2. user clicks "submit" on starting page
+2) user clicks "submit" on starting page
+
    a. a image will render of the user's "digital pet"
+
    b. to the side 4 boxes will render displaying the metrics "hunger: 0", "sleepiness: 0", "bordem: 0" ,"age:0" respectively
+
    c. 3 buttons will render on the bottom of the page below the "digital pet" image with the text "turn off lights"
+
    d. the text in the text input when the submit button was clicked from the previous screen will appear in a box above the "digital pet" image
+
    e. _Not displayed_ a internal timer within the game will start counting by seconds(will start counting on page load)
 
 3. after initial page load
