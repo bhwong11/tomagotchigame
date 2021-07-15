@@ -73,4 +73,4 @@ One of the classes uses a method from it's Factory class and a factory has to be
 The User can
 
 ===WireFrame===
-<img width="591" alt="wireframe" src="https://imgur.com/a/CIaElB0">
+<img width="591" alt="wireframe" src="https://i.imgur.com/ts8d2Aq.png">
