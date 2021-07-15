@@ -78,5 +78,7 @@ There is no peristence of data on the page, and the game progress is lost once a
 
 The data from the api was structured in a way that is returns a list of objects with one image and one state line per object. (Evolutions of pokemon were their own object).The classes were structured to take in an object with 3 images(each pokemon with and all it's evolutions are one object) so data had to be reformated from the api call to create one object with 3 images(all evolution images) included as an array property. All other stats from the 3 indivual object were lost and ideally they would have been used to adjust metrics displayed at each "evolution" of the pet.
 
+If a user puts in a name longer than the max width of the name container the text will go outside the name container
+
 ===WireFrame===
 <img width="591" alt="wireframe" src="https://i.imgur.com/ts8d2Aq.png">
