@@ -271,18 +271,17 @@ Milestones:
 /* Updated with Classes verion */
 
 async function getPokemon(){
-    try{
-    const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
-    const pokemon = await pokemonRawData.json()
+
+    const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');
+    
+        const pokemon = await pokemonRawData.json();
     
     return pokemon
-    }catch(err){
-        console.log(err);
-    }
-    
-    
-    }
-    getPokemon()
+        
+        }
+    getPokemon().then(poke=>{
+    console.log(poke.results)
+    })
        
 
 const petsData =[
