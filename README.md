@@ -67,5 +67,10 @@ This was made as project for JavaScript Objects, CSS, and html Practice.
 
 The Approach taken was a object approch that was refactored into a class approch with added functionaility and scaling of the project in mind.
 
+===Unsolved Problems===
+One of the classes uses a method from it's Factory class and a factory has to be created and added to the class before it runs, which does hurt ablity to create more factories.
+
+The User can
+
 ===WireFrame===
-<img width="591" alt="Screen Shot 2021-07-13 at 10 19 20 PM" src="https://user-images.githubusercontent.com/5798861/125550389-0eaeb617-2928-4ee6-8aaa-dc23aaed3453.png">
+<img width="591" alt="wireframe" src="https://imgur.com/a/CIaElB0">
