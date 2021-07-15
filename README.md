@@ -1,6 +1,10 @@
 # tomagotchigame
 
-<img width="591" alt="Screen Shot 2021-07-13 at 10 19 20 PM" src="https://user-images.githubusercontent.com/5798861/125550389-0eaeb617-2928-4ee6-8aaa-dc23aaed3453.png">
+===Explanation===
+
+This is a pet digital simulatator game. The object of the game is to keep the digital pet alive as long as possible by clicking buttons to lower "bad health" metrics.
+
+This was made as project for JavaScript Objects, CSS, and html Practice.
 
 ===User story===
 
@@ -44,3 +48,24 @@
    b. if the user clicks the "turn off lights" button the "sleepiness" metric displayed will decrease by 1
 
    c. if the user clicks the "play" button the "bordem" metric displayed will decrease by 1
+
+===Technologies Used/explanation===
+
+1.  JavaScript - used for functionality of timer and use interaction functionality.
+
+2.  HTML - used for rending elements on page.
+
+3.  CSS - used for styling page
+
+4.  JQuery (JavaScript Library) - used for DOM Manipulation in JavaScript.
+
+5.  animate.css (css libary) - used for boucning anamation of the "Digital Pet" Image.
+
+6.  Images from (https://pokemondb.net/) - used for "Digital Pet" image.
+
+===Approach Taken===
+
+The Approach taken was a object approch that was refactored into a class approch with added functionaility and scaling of the project in mind.
+
+===WireFrame===
+<img width="591" alt="Screen Shot 2021-07-13 at 10 19 20 PM" src="https://user-images.githubusercontent.com/5798861/125550389-0eaeb617-2928-4ee6-8aaa-dc23aaed3453.png">
