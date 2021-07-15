@@ -334,8 +334,8 @@ class PetFactory{
         this.inputData = data;
         this.inputHardModeData = dataHardMode;
     }
-    createPet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id=this.pets.length){
-        const newPet = new Pet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
+    createPet(name,evolutionNames,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id = this.pets.length){
+        const newPet = new Pet(name,evolutionNames,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
          this.pets.push(newPet)
      }
      createHardModePet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id=`HM-${this.hardModePets.length}`){
@@ -352,6 +352,7 @@ class PetFactory{
         this.inputData[this.currentIndex].intervalEvolution,
         this.inputData[this.currentIndex].evolutionImages,
         this.inputData[this.currentIndex].passedOutImages)
+        
 
          if(this.currentIndex === this.inputData.length-1){
             this.currentIndex = 0;
@@ -410,7 +411,7 @@ class PetFactory{
             timerHandler=()=>{
                 //animate   
                 this.time++;
-                console.log(this.time);
+                console.log('time',this.time);
                 this.checkAge();
                 this.checkMetrics();
                 this.checkEvolutionChange();
@@ -422,8 +423,10 @@ class PetFactory{
                 return `<div class="name-input-screen">
                 <main>
                     <form action="#">
+                    <div class = "input-div">
                         <label for="pet-name">Enter Your Pokemon Name</label>
                         <input id ="pet-name" name = "pet-name" type="text" placeholder="enter name">
+                    </div>
                     <div class="button-div">
                         <button id="${this.id}-submit-name">Submit</button>
                     </div>
@@ -432,14 +435,14 @@ class PetFactory{
                
                 </div>
                 <div class="digital-pet-screen no-display">
-        <main>
+        <main class="screen-main">
             <section class="text-display">
                 <div class= "name-display">
                     <div class="name-text">
-                    name: <span class ="name-span"></span>
+                    <div>name:</div> <span class ="name-span"></span>
                 </div>
                 <div class="evolution-text">
-                    species: <span class ="evolution-span">${this.evolutionNames[0]}</span>
+                    <div>species:</div> <span class ="evolution-span">${this.evolutionNames[0]}</span>
                 </div>
                 </div>
                 <div class="metrics-display">

@@ -31,14 +31,32 @@ body{
     overflow: hidden;
     background-color: white;
 }
+.input-div{
+    display: flex;
+    justify-content: center;
+}
 
 .button-div{
     display: flex;
     justify-content: space-evenly;
 }
 
-
 /* digital pet screen */
+
+
+.screen-main{
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch; */
+    margin: 5%;
+    height: 100%;
+    max-height: 95vh;
+    border: 20px solid var(--primary);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
 /* - top metrics */
 .text-display{
     display: flex;
@@ -71,7 +89,9 @@ body{
 }
 .name-text{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     margin: 10px;
     padding: 5px;
     border: 5px solid var(--secondary);
@@ -83,7 +103,9 @@ body{
 }
 .evolution-text{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     margin: 10px;
     padding: 5px;
     border: 5px solid var(--secondary);
@@ -93,23 +115,13 @@ body{
     font-size: .7em;
 
 }
+
 /* - image itself */
-.no-display{
-    display: none;
-}
-.digital-pet-screen{
-    margin: 5%;
-    height: 100%;
-    max-height: 100%;
-    border: 20px solid var(--primary);
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: white;
-}
+
 .digital-pet-display{
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 30%;
     margin: 3%;
 }
 img{
@@ -124,6 +136,11 @@ button{
     padding: 10px;
     margin: 10px;
     color:var(--primary);
+    transition: ease-in 300ms;
+}
+button:hover{
+    background-color: var(--primary);
+    color: white;
 }
 
 
@@ -132,6 +149,10 @@ button{
     border: 5px solid var(--dark);
     color:var(--dark);
 }
+.player-buttons:hover{
+    background-color: var(--secondary);
+}
+
 .buttons-display{
     display: flex;
     justify-content: space-evenly;
@@ -172,8 +193,12 @@ button{
 
 /* post death css */
 .new-button-container{
+    /* position: absolute;
+    bottom: 10x; */
     margin-top: 20px;
-    padding: 1% 5% 100% 5%; 
+    padding: 1% 5% 100% 5%;  
+    /* height: 10%; */
+    width: 100%;
     border-radius: 10px;
     overflow: hidden;
     background-color: var(--success);
@@ -189,5 +214,19 @@ button{
 .death-flag{
     padding: 0% 10%;
     text-align: center;
+    font-size: .8em;
+}
+.no-display{
+    display: none;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px){
+	.input-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
