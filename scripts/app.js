@@ -506,8 +506,7 @@ class PetFactory{
                 $(`#${this.id}-lights-btn`).on('click',this.turnOffLights);
                 $(`#${this.id}-play-btn`).on('click',this.play);
                 $(`#${this.id}-make-new-pet`).on('click',petFactory1.makeNewPet)
-                $(`#${this.id}-make-new-hard-mode`).on('click',petFactory1.makeNewHardModePet
-                )
+                $(`#${this.id}-make-new-hard-mode`).on('click',petFactory1.makeNewHardModePet)
             }
             displayMetrics(){
                 //$('.new-button-container').css('background-color','red')

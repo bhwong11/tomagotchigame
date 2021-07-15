@@ -26,6 +26,7 @@ body{
     border: 20px solid var(--primary);
     border-radius: 10px;
     overflow: hidden;
+    background-color: white;
 }
 
 
@@ -108,7 +109,15 @@ img{
     height: 30vh;
 }
 
-/* This is for the submit */
+button{
+    border: 5px solid var(--primary);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* This is for the name submit */
 .button-div{
     display: flex;
     justify-content: space-evenly;
@@ -139,6 +148,7 @@ img{
     border: 20px solid var(--primary);
     border-radius: 10px;
     overflow: hidden;
+    background-color: white;
 }
 .new-pet-btn{
     padding: 10px;
