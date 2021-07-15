@@ -416,8 +416,7 @@ class PetFactory{
                 this.checkMetrics();
                 this.checkEvolutionChange();
                 this.checkIfDead();
-        
-        
+    
             }
             render(){
                 return `<div class="name-input-screen">
