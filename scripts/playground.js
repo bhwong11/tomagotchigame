@@ -270,6 +270,8 @@ Milestones:
 
 /* Updated with Classes verion */
 const pokeData = [];
+const pokeDataHardMode = [];
+
 async function getPokemon(){
 
     const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=18');
@@ -291,13 +293,29 @@ async function getPokemon(){
                         intervalMetricsIncrease: 1,
                         intervalEvolution: 1,
                         evolutionImages: [
-                            'https://img.pokemondb.net/sprites/black-white/normal/charmander.png',
-                            'https://img.pokemondb.net/sprites/black-white/normal/charmeleon.png','https://img.pokemondb.net/sprites/black-white/normal/charizard.png'
+                            `https://img.pokemondb.net/sprites/black-white/normal/${poke.results[i].name}.png`,
+                            `https://img.pokemondb.net/sprites/black-white/normal/${poke.results[i+1].name}.png`,`https://img.pokemondb.net/sprites/black-white/normal/${poke.results[i+2].name}.png`
                         ],
                         passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
                     }
                     
                     );
+                    pokeDataHardMode.push(
+                        {
+                            name:null,
+                            evolutionNames:[poke.results[i].name,poke.results[i+1].name,poke.results[i+2].name],
+                            intervalOfAging: 10,
+                            intervalMetricsIncrease: 1,
+                            intervalEvolution: 1,
+                            evolutionImages: [
+                                `https://img.pokemondb.net/sprites/silver/normal/${poke.results[i].name}.png`,
+                                `https://img.pokemondb.net/sprites/silver/normal/${poke.results[i+1].name}.png`,
+                                `https://img.pokemondb.net/sprites/silver/normal/${poke.results[i+2].name}.png`,
+                            ],
+                            passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
+                        }
+                        
+                        );
             }
         }
     )
@@ -444,7 +462,7 @@ class PetFactory{
 }
 
     //intialize pet factory
-    const petFactory1 = new PetFactory('factory1',petsData,petsHardModeData)
+    const petFactory1 = new PetFactory('factory1',pokeData,pokeDataHardMode)
         
         class Pet{
             constructor(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id){
