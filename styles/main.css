@@ -1,3 +1,10 @@
+:root{
+    --warn: #F9C74F;
+    --error:#F94144;
+    --success: #90BE6D;
+    --primary: #F3722C;
+    --secondary: #43AA8B;
+  }
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +13,8 @@
 body{
     height: 100vh;
     max-height: 95vh;
+    background-color: #f1f1f1;
+    color: #1f1f1f
 }
 
 .name-input-screen{
@@ -14,7 +23,7 @@ body{
     justify-content: center;
     margin: 5%;
     height: 100%;
-    border: 20px solid purple;
+    border: 20px solid var(--primary);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -30,7 +39,7 @@ body{
 }
 
 .metrics-display{
-    background-color: bisque;
+    background-color: var(--warn);
     width: 70%;
 }
 
@@ -39,14 +48,14 @@ body{
     justify-content: space-evenly;
     margin: 10px;
     padding: 5px;
-    border: 5px solid sienna;
+    border: 5px solid var(--primary);
     border-radius: 20px;
-    background-color: aqua;
+    background-color: #f1f1f1;
     text-align-last: justify;
 }
 
 .name-display{
-    background-color: bisque;
+    background-color: var(--warn);
     width: 30%;
 }
 .name-text{
@@ -54,9 +63,9 @@ body{
     justify-content: space-evenly;
     margin: 10px;
     padding: 5px;
-    border: 5px solid darkcyan;
+    border: 5px solid var(--secondary);
     border-radius: 20px;
-    background-color: aqua;
+    background-color: #f1f1f1;
 
 }
 .evolution-text{
@@ -64,9 +73,9 @@ body{
     justify-content: space-evenly;
     margin: 10px;
     padding: 5px;
-    border: 5px solid darkcyan;
+    border: 5px solid var(--secondary);
     border-radius: 20px;
-    background-color: aqua;
+    background-color: #f1f1f1;
 
 }
 .buttons-display{
@@ -75,7 +84,7 @@ body{
     padding: 10% 5% 100% 5%; 
     border-radius: 10px;
     overflow: hidden;
-    background-color: salmon;
+    background-color: var(--success);
 }
 .no-display{
     display: none;
@@ -84,9 +93,10 @@ body{
     margin: 5%;
     height: 100%;
     max-height: 100%;
-    border: 20px solid purple;
+    border: 20px solid var(--primary);
     border-radius: 10px;
     overflow: hidden;
+    background-color: white;
 }
 .digital-pet-display{
     display: flex;
@@ -112,7 +122,7 @@ img{
     padding: 3% 5% 100% 5%; 
     border-radius: 10px;
     overflow: hidden;
-    background-color: salmon;
+    background-color: var(--success);
 }
 .new-button-flex{
     display: flex;
@@ -121,10 +131,14 @@ img{
 
 /* This is for start screen */
 .new-button-container-start{
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5%;
+    height: 100%;
+    border: 20px solid var(--primary);
+    border-radius: 10px;
+    overflow: hidden;
 }
 .new-pet-btn{
     padding: 10px;
