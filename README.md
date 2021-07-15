@@ -70,7 +70,7 @@ The Approach taken was a object approch that was refactored into a class approch
 ===Unsolved Problems===
 One of the classes uses a method from it's Factory class and a factory has to be created and added to the class before it runs, which does hurt ablity to create more factories.
 
-The User can
+Ideally a different image of the "passed away" pet will show depending on what image was displayed before death, so each evolution image would have a unique "passed away" image.
 
 ===WireFrame===
 <img width="591" alt="wireframe" src="https://i.imgur.com/ts8d2Aq.png">
