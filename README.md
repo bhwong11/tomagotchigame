@@ -63,7 +63,7 @@ This was made as project for JavaScript Objects, CSS, and html Practice.
 
 6.  Images from (https://pokemondb.net/) - used for "Digital Pet" image.
 
-7.  normailize.css - used for css browser compatability change
+7.  normailize.css(https://cdnjs.cloudflare.com) - used for css browser compatability change
 
 ===Approach Taken===
 
