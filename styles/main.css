@@ -14,7 +14,8 @@ body{
     height: 100vh;
     max-height: 95vh;
     background-color: #f1f1f1;
-    color: #1f1f1f
+    color: #1f1f1f;
+    font-family: "Helvetica","Arial", "sans-seriff";
 }
 
 .name-input-screen{

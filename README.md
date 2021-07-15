@@ -80,5 +80,7 @@ The data from the api was structured in a way that is returns a list of objects 
 
 If a user puts in a name longer than the max width of the name container the text will go outside the name container
 
+The display is not responsive and elements by not be display properly depending on screen size
+
 ===WireFrame===
 <img width="591" alt="wireframe" src="https://i.imgur.com/ts8d2Aq.png">
