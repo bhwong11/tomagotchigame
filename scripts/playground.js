@@ -424,6 +424,7 @@ class PetFactory{
 
         console.log(this.inputData);
         this.createPet(this.inputData[this.currentIndex].name,
+        this.inputData[this.currentIndex].evolutionNames,
         this.inputData[this.currentIndex].intervalOfAging,
         this.inputData[this.currentIndex].intervalMetricsIncrease,
         this.inputData[this.currentIndex].intervalEvolution,
@@ -444,6 +445,7 @@ class PetFactory{
 
         console.log(this.inputHardModeData);
         this.createHardModePet(this.inputHardModeData[this.currentIndex].name,
+        this.inputHardModeData[this.currentIndex].evolutionNames,
         this.inputHardModeData[this.currentIndexhardMode].intervalOfAging,
         this.inputHardModeData[this.currentIndexhardMode].intervalMetricsIncrease,
         this.inputHardModeData[this.currentIndexhardMode].intervalEvolution,
@@ -465,8 +467,9 @@ class PetFactory{
     const petFactory1 = new PetFactory('factory1',pokeData,pokeDataHardMode)
         
         class Pet{
-            constructor(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id){
+            constructor(name,evolutionNames,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id){
                 this.name = name;
+                this.evolutionNames =evolutionNames;
                 this.intervalOfAging = intervalOfAging;
                 this.intervalMetricsIncrease = intervalMetricsIncrease;
                 this.intervalEvolution = intervalEvolution;
@@ -514,6 +517,9 @@ class PetFactory{
                 <div class= "name-display">
                     <div class="name-text">
                     name: <span class ="name-span"></span>
+                </div>
+                <div class="evolution-text">
+                    species: <span class ="evolution-span">${this.evolutionNames[0]}</span>
                 </div>
                 </div>
                 <div class="metrics-display">
@@ -627,6 +633,8 @@ class PetFactory{
                     if(this.age!==0){
                         if(!(this.age/this.intervalEvolution>this.evolutionImages.length-1)){
                         $('.digital-pet-image').attr('src',this.evolutionImages[Math.floor(this.age/this.intervalEvolution)])
+                        
+                        $('.evolution-span').text(this.evolutionNames[Math.floor(this.age/this.intervalEvolution)])
                         }
                     }
                 }
@@ -655,8 +663,8 @@ class PetFactory{
         }
 
         class HardModePet extends Pet {
-            constructor(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id){
-                super(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
+            constructor(name,evolutionNames,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id){
+                super(name,evolutionNames,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
                 this.intervalMetricsIncrease = this.intervalMetricsIncrease/2;
             }
             feed=()=>{
