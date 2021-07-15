@@ -72,5 +72,7 @@ One of the classes uses a method from it's Factory class and a factory has to be
 
 Ideally a different image of the "passed away" pet will show depending on what image was displayed before death, so each evolution image would have a unique "passed away" image.
 
+There is no peristence of data on the page, and the game progress is lost once a user relaods
+
 ===WireFrame===
 <img width="591" alt="wireframe" src="https://i.imgur.com/ts8d2Aq.png">

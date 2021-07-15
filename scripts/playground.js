@@ -362,7 +362,7 @@ class PetFactory{
          this.pets.push(newPet)
      }
      createHardModePet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id=`HM-${this.hardModePets.length}`){
-        const newPet = new BabyPet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
+        const newPet = new HardModePet(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
          this.hardModePets.push(newPet)
      }
           
@@ -593,6 +593,7 @@ class PetFactory{
                     $('.death-flag').text(`Your Pet has Died! Click Below to Get a new Pet`);
                     $(`#${this.id}-make-new-hard-mode`).removeClass('no-display')
                     $(`#${this.id}-make-new-pet`).removeClass('no-display')
+                    $('.buttons-display').addClass('no-display')
                     console.log(this.id)
                     break
                 }
@@ -600,9 +601,10 @@ class PetFactory{
             }
         }
 
-        class BabyPet extends Pet {
+        class HardModePet extends Pet {
             constructor(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id){
                 super(name,intervalOfAging,intervalMetricsIncrease,intervalEvolution,evolutionImages,passedOutImages,id)
+                this.intervalMetricsIncrease = this.intervalMetricsIncrease/2;
             }
             feed=()=>{
                 this.hunger -=.5;
@@ -628,10 +630,11 @@ class PetFactory{
         //petFactory1.makeNewHardModePet();
 
 
-        // const babypet1 = new BabyPet('pet1',10,1,3,[
-        //     'https://img.pokemondb.net/sprites/black-white/normal/charmander.png',
-        //     'https://img.pokemondb.net/sprites/black-white/normal/charmeleon.png" alt="Charmeleo','https://img.pokemondb.net/sprites/black-white/normal/charizard.png'
-        // ],['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],1)
+        const hardModePet1 = new HardModePet('pet1',10,1,3,[
+            'https://img.pokemondb.net/sprites/black-white/normal/charmander.png',
+            'https://img.pokemondb.net/sprites/black-white/normal/charmeleon.png" alt="Charmeleo','https://img.pokemondb.net/sprites/black-white/normal/charizard.png'
+        ],['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],1)
+        console.log(hardModePet1)
         
         
     //     const pet1 = new Pet('pet1',10,1,3,[
@@ -646,4 +649,13 @@ class PetFactory{
 
 
 //create game object that will create start screen, pet factory
+
+//adjust constructor and varible name to hardMode pet
+//todo tree = vs code extension //better comments
+
+//pokeapi.co
+
+//use string concat on console.log
+//use emojis in console.log
+//on console.log reference function that they are called from
 
