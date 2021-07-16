@@ -308,9 +308,8 @@ async function getPokemon(){
                             intervalMetricsIncrease: 1,
                             intervalEvolution: 1,
                             evolutionImages: [
-                                `https://img.pokemondb.net/sprites/sword-shield/normal/${poke.results[i].name}.png`,
-                                `https://img.pokemondb.net/sprites/sword-shield/normal/${poke.results[i+1].name}.png`,
-                                `https://img.pokemondb.net/sprites/sword-shield/normal/${poke.results[i+2].name}.png`,
+                                `https://img.pokemondb.net/sprites/black-white/shiny/${poke.results[i].name}.png`,
+                                `https://img.pokemondb.net/sprites/black-white/shiny/${poke.results[i+1].name}.png`,`https://img.pokemondb.net/sprites/black-white/shiny/${poke.results[i+2].name}.png`
                             ],
                             passedOutImages: ['https://i.postimg.cc/g06jpbdt/1370010257183.jpg'],
                         }
