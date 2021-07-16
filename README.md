@@ -1,5 +1,9 @@
 # tomagotchigame
 
+===Game Link===
+
+https://bhwong11.github.io/tomagotchigame/
+
 ===Explanation===
 
 This is a pet digital simulatator game. The object of the game is to keep the digital pet alive as long as possible by clicking buttons to lower "bad health" metrics.
