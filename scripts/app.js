@@ -366,7 +366,7 @@ class PetFactory{
     makeNewHardModePet=()=>{
 
         this.createHardModePet(this.inputHardModeData[this.currentIndex].name,
-        this.inputHardModeData[this.currentIndex].evolutionNames,
+        this.inputHardModeData[this.currentIndexhardMode].evolutionNames,
         this.inputHardModeData[this.currentIndexhardMode].intervalOfAging,
         this.inputHardModeData[this.currentIndexhardMode].intervalMetricsIncrease,
         this.inputHardModeData[this.currentIndexhardMode].intervalEvolution,
