@@ -274,14 +274,7 @@ Milestones:
 const pokeData = [];
 const pokeDataHardMode = [];
 
-async function getPokemon(){
-
-    const pokemonRawData = await fetch('https://pokeapi.co/api/v2/pokemon?limit=18')
-    const pokemon = await pokemonRawData.json();
-    return pokemon
-        
-        }
-    getPokemon().then(poke=>{
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=18').then(data=>data.json()).then(poke=>{
     poke.results.forEach(
         function(e,i){
             if(i%3===0){
@@ -506,6 +499,7 @@ class PetFactory{
                 $(`#${this.id}-play-btn`).on('click',this.play);
                 $(`#${this.id}-make-new-pet`).on('click',petFactory1.makeNewPet)
                 $(`#${this.id}-make-new-hard-mode`).on('click',petFactory1.makeNewHardModePet)
+                //maybe use this.pet.somethin
             }
             displayMetrics(){
                 //$('.new-button-container').css('background-color','red')
