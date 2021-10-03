@@ -466,7 +466,7 @@ class PetFactory{
                     Feed
                 </button>
                 <button class = "player-buttons" id="${this.id}-lights-btn">
-                    Turn Off Lights
+                    Sleep
                 </button>
                 <button class = "player-buttons" id="${this.id}-play-btn">
                     Play

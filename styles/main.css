@@ -244,6 +244,30 @@ button:hover{
     }
     .player-buttons{
         font-size: .75em;
+        padding: 10px;
+    }
+    .new-button-container{
+        font-size: .70em;
+        max-height: fit-content;
+        padding: 3px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+	.input-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .player-buttons{
+        font-size: .75em;
+        padding: 10px 3px;
+    }
+    .new-button-container{
+        font-size: .70em;
+        max-height: fit-content;
+        padding: 3px;
     }
 }
 
